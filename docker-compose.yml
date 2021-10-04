@@ -4,9 +4,9 @@ services:
   haproxy:
     image: haproxy:2.2-alpine
     volumes:
-      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-      - ./haproxy/blacklist_agent.lst:/usr/local/etc/haproxy/blacklist_agent.lst:ro
-      - ./haproxy/whitelist_agent.lst:/usr/local/etc/haproxy/whitelist_agent.lst:ro
+      - ./haproxy/:/usr/local/etc/haproxy/
+      - ./haproxy/blacklist_agent.lst:/usr/local/etc/haproxy/blacklist_agent.lst
+      - ./haproxy/whitelist_agent.lst:/usr/local/etc/haproxy/whitelist_agent.lst 
     ports:
       - 9090:80
     depends_on:
